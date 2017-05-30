@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/colorBackground">
+
+        <CheckBox
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:background="@drawable/btn_checkbox_blacklist_selector"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/isOpenBlackList" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_menu_delete"
+            android:clickable="true"
+            android:layout_above="@+id/isOpenBlackList"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/blacklist_numbers"
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
+
+    </ListView>
+
+    <ImageButton
+        android:id="@+id/btn_addnumber"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:alpha="6"
+        android:background="#FFFFF0"
+        android:src="@mipmap/ic_add" />
+</LinearLayout>

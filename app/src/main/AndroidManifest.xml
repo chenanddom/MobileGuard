@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mobileguard.activitys">
+
+    <!-- 两种provider的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 网络定位的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SMS"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+    <!-- 添加访问手机电话状态的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!-- 拨打电话权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <!-- 获取包大小的权限 -->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"></uses-permission>
+    <!-- 查杀后台进程的权限-->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+
+    <uses-permission  android:name="android.permission.GET_PACKAGE_SIZE"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_mobileguard"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.mobileguard.activitys.GuidePageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="main"
+            android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".MobileAgainstBurglarsActivity"
+            android:label="againstburglar"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="login"
+            android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="register"></activity>
+        <activity
+            android:name=".ContactsActivity"
+            android:label="contacts"></activity>
+        <activity
+            android:name=".BlackListActivity"
+            android:label="blacklist"></activity>
+        <activity
+            android:name=".BlackListSettingActivity"
+            android:label="blacksetting"></activity>
+        <activity
+            android:name=".SoftwareManagermentActivity"
+            android:label="softwaremanager"></activity>
+        <activity
+            android:name=".ProccessManagerActivity"
+            android:label="preccessmanager"></activity>
+        <activity
+            android:name=".CleanCacheActivity"
+            android:label="cleancache"></activity>
+        <activity
+            android:name=".AntivirusActivity"
+            android:label="antivirus"></activity>
+        <activity
+            android:name=".SettingActivity"
+            android:label="setting"></activity>
+        <activity
+            android:name=".CommentsActivity"
+            android:label="comments"></activity>
+        <activity
+            android:name=".TrafficManagerActivity"
+            android:label="traffictic"></activity>
+
+
+        <receiver android:name="com.mobileguard.receiver.SmsReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.mobileguard.receiver.MyAdminister"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/my_admin" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <service android:name="com.mobileguard.service.BlackListService"></service>
+        <receiver android:name="com.mobileguard.receiver.BootCompleteReceiver"></receiver>
+    </application>
+
+</manifest>

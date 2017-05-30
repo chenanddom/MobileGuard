@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorBackground"
+        android:layout_weight="2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_setting"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/blacklist_icon" />
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_blacklist_shape"
+            android:gravity="center"
+            android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="197dp"
+            android:layout_height="37dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/blackinfo"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_blacklist_selector"
+                android:gravity="center"
+                android:button="@null"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        ></View>
+            <RadioButton
+                android:id="@+id/rbTelephone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:text="@string/blacknumber"
+                android:checked="true"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_blacklist_selector"
+                android:gravity="center"
+                 />
+
+        </RadioGroup>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/blacklist_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+    </FrameLayout>
+</LinearLayout>

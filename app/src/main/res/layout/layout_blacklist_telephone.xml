@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/call_tips"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="电话"
+        android:visibility="gone"
+        />
+<ListView
+    android:id="@+id/call_numbers"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></ListView>
+
+</RelativeLayout>
+
+
